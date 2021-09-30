@@ -67,6 +67,7 @@ nav a {
     height: 100vh;
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/backgroundimg.jpeg') no-repeat center center/cover;
     
+    
 }
 
 
@@ -75,12 +76,15 @@ nav a {
 }
 
 #main form input {
+    
+    
     text-align: center;
     font-size: 24px;
-    border: 3px solid #20821e;
+    border: 3px solid #b8aa67;
     border-radius: 20px;
     background: #333;
     color: #fff;
+    margin: 0 20px;
 }
 
 #main form input[type="submit"] {
@@ -88,14 +92,13 @@ nav a {
     padding: 5px;
     cursor: pointer;
     width: 100px;
-    border: 3px solid #20821e;
     border-radius: 20px;
     background: #333;
     color: #fff;
 }
 
 #main form input[type="submit"]:hover {
-    background: #2f452f;
+    background: #6e653d;
 }
 
 
@@ -135,4 +138,8 @@ footer {
     font-size: 48px;
     font-family: 'Staatliches', cursive;
 }
+
+
+
+
 
