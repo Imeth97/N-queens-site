@@ -5,7 +5,10 @@
     margin: 0;
     padding: 0;
     font-family: 'Open Sans Condensed', sans-serif;
+    
 }
+
+/* Nav */
 
 nav {
     display: flex;
@@ -39,7 +42,7 @@ nav li {
 }
 
 nav li:hover {
-    background: #333;
+    background: #20821e;
     text-decoration: underline;
     
 }
@@ -48,4 +51,54 @@ nav a {
     text-decoration: none;
     color: white;
     
+}
+
+
+/* Main section - solver interface */
+
+#main {
+    text-align: center;
+    height: 100vh;
+    background: url("/backgroundimg.jpeg") no-repeat center center/cover;
+    
+}
+
+
+#main * {
+    z-index: 10;
+}
+
+
+
+
+/* about section */
+
+#about {
+    text-align: center;
+    height: 100vh;
+    background: #333;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: #fff;
+}
+
+/* utilities */
+
+.description {
+    display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    color: #fff;
+
+
+}
+
+.description h1, .description h3 {
+    font-size: 48px;
 }
