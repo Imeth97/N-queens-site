@@ -18,7 +18,7 @@ function create_board(n){
    board.push(row)
   }
   
-  console.log(board)
+  
 	return board
 }
 
@@ -86,68 +86,104 @@ function validate(board, x, y) {
 
 }
 
+function present_sol(board){
+    var n = board.length
+    var res = ""
+
+    for (row = 0; row<n; row++) {
+
+        var row_to_add = ""
+
+        for (col = 0; col<n; col++) {
+
+            if (board[row][col] == 1) {
+                row_to_add += "Q"
+            }else{
+                row_to_add += "-"
+            }
+        }
+
+        row_to_add += "\n"
+    
+        res += row_to_add
+
+        
+    }
+
+    return res
+}
 
 
-function solve(board, start=0){
+
+function solve(board, start=0, solution_lst = []){
 
 		
 		
-    n = board.length
+    let n = board.length
 
 for (i=0; i<n; i++){
 
 
 
-if (board[i].includes(1)==false){
+    if (board[i].includes(1)==false){
 
 
 
-        for (j=start; j<n; j++){
-    
-        if (validate(board, i, j)==true){
-      
-              
-      
-              board[i][j]=1
-          
-          return solve(board)
-      
-      }
-    
+            for (j=start; j<n; j++){
+        
+            if (validate(board, i, j)==true){
+        
+                
+        
+                board[i][j]=1
+
+                if (i !== n-1){
+                    return solve(board, 0, solution_lst) 
+                }else{
+                    let sol_x = present_sol(board)
+
+                    //console.log(sol_x)
+
+                    solution_lst.push(sol_x)
+                    
+                    board[i][j]=0
+
+                }
+            
+            
+        
+        }
+        
+        }
+        
+        if (i==0) {
+            
+            return solution_lst
+        }
+        
+        start = (board[i-1]).indexOf(1)
+        
+        
+        
+        empty_row = []
+
+        for (var k=0; k<n; k++){
+            empty_row.push(0)
+        }
+        
+        board[i-1]=empty_row
+        
+        //console.log(solution_lst.length)
+        
+        
+        return solve(board, start+1, solution_lst)
+
+
     }
-    
-    
-    
-    start = (board[i-1]).indexOf(1)
-    
-    
-    
-    empty_row = []
 
-    for (var k=0; k<n; k++){
-        empty_row.push(0)
-    }
-    
-    board[i-1]=empty_row
-    
-    
-    
-    
-    return solve(board, start+1)
 
 
 }
-
-
-
-}
-
-
-console.log(board)
-
-
-return board
-
 
 
 }
@@ -156,10 +192,10 @@ function outputSolution(n){
 
     board = create_board(n)
 
-    solution = solve(board)
+    solutions = solve(board)
 
     
-    return solution
+    return solutions
 
 }
 
@@ -168,11 +204,24 @@ function outputSolution(n){
 
 
 function give_soln(){
+
+    
     var n = document.getElementById('n').value 
 
     n = Number(n)
 
-    outputSolution(n)
+    
 
+    solutions = outputSolution(n)
+
+    
+    
+
+    for (i=0; i<solutions.length; i++){
+        
+        console.log(solutions[i])
+    }
+
+    console.log(solutions.length + ' solutions ABOVE for n = ' + n)
 
 }

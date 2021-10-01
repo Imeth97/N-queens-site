@@ -10,6 +10,10 @@
     
 }
 
+body {
+    background: #1b1c1c;
+}
+
 /* Nav */
 
 nav {
@@ -132,6 +136,10 @@ footer {
     color: #fff;
 
 
+}
+
+.description p {
+    font-size: 24px;
 }
 
 .description h1, .description h3 {
