@@ -167,12 +167,12 @@ function outputSolution(n){
 // Get the value of n from index.html
 
 
-var el = document.getElementById('submit_n')
+function give_soln(){
+    var n = document.getElementById('n').value 
 
-var n = document.getElementById('n').value 
+    n = Number(n)
 
-n = Number(n)
+    outputSolution(n)
 
-console.log(n)
 
-el.addEventListener('submit', outputSolution(n))
+}

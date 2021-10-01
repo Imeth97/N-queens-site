@@ -87,7 +87,7 @@ nav a {
     margin: 0 20px;
 }
 
-#main form input[type="submit"] {
+#main form input[type="button"] {
     margin-top: 20px;
     padding: 5px;
     cursor: pointer;
@@ -97,7 +97,7 @@ nav a {
     color: #fff;
 }
 
-#main form input[type="submit"]:hover {
+#main form input[type="button"]:hover {
     background: #6e653d;
 }
 
