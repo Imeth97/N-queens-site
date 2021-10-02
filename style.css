@@ -142,6 +142,11 @@ footer {
     font-size: 24px;
 }
 
+.description strong {
+    font-weight: bolder;
+    
+}
+
 .description h1, .description h3 {
     font-size: 48px;
     font-family: 'Staatliches', cursive;
